@@ -46,3 +46,6 @@ The export endpoint is protected by the admin token. Do not share it publicly. F
 
 ## Deploy as a separate site
 Deploy this folder as its own Node web service (for example, on Render or another Node host). Set `MONGODB_URI`, `MONGODB_DB`, `ADMIN_TOKEN`, and `PORT` as host environment variables. Use the deployment's public URL or attach a dedicated domain. This app does not need to be embedded in or linked to the existing portfolio site.
+
+### Deploy to Vercel
+The included `vercel.json` routes requests to the Express server as a Vercel Node function. Import this project into Vercel and add `MONGODB_URI`, `MONGODB_DB`, and `ADMIN_TOKEN` under **Project Settings → Environment Variables**, then redeploy. Vercel does not provide persistent local file storage, so configure MongoDB to save lead submissions. Do not rely on the local `data/leads.json` fallback on Vercel.
